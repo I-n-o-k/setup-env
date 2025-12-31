@@ -54,9 +54,4 @@ apt-get install -q -y --no-install-recommends dos2unix jq flex bison gperf exfat
 
  mkdir ~/bin
  curl -sL https://gerrit.googlesource.com/git-repo/+/refs/heads/stable/repo?format=TEXT | base64 --decode  > ~/bin/repo
- curl -s https://api.github.com/repos/tcnksm/ghr/releases/latest
-    | jq -r '.assets[] | select(.browser_download_url | contains("linux_amd64")) | .browser_download_url' | wget -qi -
- tar -xzf ghr_*_amd64.tar.gz --wildcards 'ghr*/ghr' --strip-components 1
- mv ./ghr ~/bin/ && rm -rf ghr_*_amd64.tar.gz
  chmod a+rx ~/bin/repo
- chmod a+x ~/bin/ghr
