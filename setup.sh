@@ -48,9 +48,7 @@ sudo apt-get install -q -y --no-install-recommends dos2unix jq flex bison gperf 
   # Clean useless sudo apt cache
  sudo apt-get -y clean && sudo apt-get -y autoremove
  sudo rm -rf /var/lib/sudo apt/lists/* /var/cache/sudo apt/archives/*
- sudo dpkg-divert --local --rename /usr/bin/ischroot && ln -sf /bin/true /usr/bin/ischroot
- sudo chmod u+s /usr/bin/screen && chmod 755 /var/run/screen
- sudo echo "Set disable_coredump false" >> /etc/sudo.conf
 
+  # Install Repo
  sudo curl -sL https://gerrit.googlesource.com/git-repo/+/refs/heads/stable/repo?format=TEXT | base64 --decode  > /usr/local/bin/repo
  sudo chmod a+rx /usr/local/bin/repo
