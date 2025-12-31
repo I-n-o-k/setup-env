@@ -52,6 +52,5 @@ sudo apt-get install -q -y --no-install-recommends dos2unix jq flex bison gperf 
  sudo chmod u+s /usr/bin/screen && chmod 755 /var/run/screen
  sudo echo "Set disable_coredump false" >> /etc/sudo.conf
 
- mkdir ~/bin
- curl -sL https://gerrit.googlesource.com/git-repo/+/refs/heads/stable/repo?format=TEXT | base64 --decode  > ~/bin/repo
- chmod a+rx ~/bin/repo
+ sudo curl -sL https://gerrit.googlesource.com/git-repo/+/refs/heads/stable/repo?format=TEXT | base64 --decode  > /usr/local/bin/repo
+ sudo chmod a+rx /usr/local/bin/repo
